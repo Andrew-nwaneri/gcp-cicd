@@ -33,12 +33,18 @@ jobs:
       - name: Run Trivy vulnerability scanner
         uses: aquasecurity/trivy-action@0.28.0
         with:
-          scan-type: fs
-          scan-ref: .
-          format: table
-          ignore-unfixed: true
-          vuln-type: os,library
-          severity: CRITICAL,HIGH
+            scan-type: fs
+            scan-ref: .
+            format: table
+            exit-code: 0
+            severity: CRITICAL,HIGH
+        # with:
+        #   scan-type: fs
+        #   scan-ref: .
+        #   format: table
+        #   ignore-unfixed: true
+        #   vuln-type: os,library
+        #   severity: CRITICAL,HIGH
 
   # build_docker_image_and_push_to_GCP_ArtifactRegistry:
   #   runs-on: ubuntu-latest

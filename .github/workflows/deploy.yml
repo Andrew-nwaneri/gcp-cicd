@@ -2,9 +2,9 @@ name: Google Cloud Run CICD
 
 on:
   push:
-    branches: [ main ]
+    branches: [ master ]
   pull_request:
-    branches: [ main ]
+    branches: [ master ]
   workflow_dispatch:  # allow manual trigger (needed for destroy stage)
 
 env:
